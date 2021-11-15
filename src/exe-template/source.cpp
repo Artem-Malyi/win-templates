@@ -5,14 +5,13 @@
 #include <Windows.h>
 
 #ifdef _WIN64
-    #define LOG_PREFIX "Sample64.exe"
+    #define LOG_PREFIX "exe-template64.exe"
 #else
-    #define LOG_PREFIX "Sample32.exe"
+    #define LOG_PREFIX "exe-template32.exe"
 #endif
-#define LOGGER_ENABLED
-#define FILE_LOGGER_ENABLED
+#define DEBUG_LOGGER_ENABLED
+//#define FILE_LOGGER_ENABLED
 #include "logger.h"
-
 
 BOOL WINAPI EntryPoint(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpReserved)
 {
