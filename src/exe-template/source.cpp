@@ -10,7 +10,7 @@
     #define LOG_PREFIX "exe-template32.exe"
 #endif
 #define DEBUG_LOGGER_ENABLED
-//#define FILE_LOGGER_ENABLED
+#define FILE_LOGGER_ENABLED
 #include "logger.h"
 
 BOOL WINAPI EntryPoint(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpReserved)
