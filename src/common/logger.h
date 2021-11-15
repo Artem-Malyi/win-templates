@@ -10,7 +10,7 @@
 
 // Default settings. May be overridden with definitions prior to #include "logger.h" line.
 #ifndef LOG_MUTEX_NAME
-    #define LOG_MUTEX_NAME    L"Global\\058070A4-C80F-4098-A359-7B22B9D53CAF"
+    #define LOG_MUTEX_NAME    L"Global\\235CC6D9-A4FF-49EE-826C-31CC44846B05"
 #endif
 
 #ifndef LOGFILE_NAME
@@ -61,7 +61,7 @@
                 __st.wMonth, __st.wDay, __st.wYear, __st.wHour, __st.wMinute, __st.wSecond, __st.wMilliseconds,             \
                 __sImageName, GetCurrentProcessId(), GetCurrentThreadId(), LOG_PREFIX, __FUNCTION__, __VA_ARGS__);          \
             if (!StrStrIA(__sImageName, "dbgview.exe"))                                                                     \
-                OutputDebugStringA(__sOutput);                                                                                  \
+                OutputDebugStringA(__sOutput);                                                                              \
             LOG_TO_FILE(__sOutput);                                                                                         \
         }                                                                                                                   \
     }
@@ -85,7 +85,7 @@
             __st.wMonth, __st.wDay, __st.wYear, __st.wHour, __st.wMinute, __st.wSecond, __st.wMilliseconds,             \
             __sImageName, GetCurrentProcessId(), GetCurrentThreadId(), __FUNCTION__, __VA_ARGS__);                      \
         if (!StrStrIA(__sImageName, "dbgview.exe"))                                                                     \
-            OutputDebugStringA(__sOutput);                                                                                  \
+            OutputDebugStringA(__sOutput);                                                                              \
         LOG_TO_FILE(__sOutput);                                                                                         \
     }                                                                                                                   \
 }
