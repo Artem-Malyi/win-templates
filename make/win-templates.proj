@@ -1,0 +1,41 @@
+<Project DefaultTargets="Rebuild" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <Target Name="Rebuild">
+        <!-- Clean exe-template targets -->
+        <Message Importance="high" Text="Cleaning exe-template x64..." />
+        <MSBuild Projects="..\src\exe-template\exe-template.vcxproj" Targets="Clean" Properties="Configuration=Release;Platform=x64" />
+        <MSBuild Projects="..\src\exe-template\exe-template.vcxproj" Targets="Clean" Properties="Configuration=Debug;Platform=x64" />
+
+        <Message Importance="high" Text="Cleaning exe-template x86..." />
+        <MSBuild Projects="..\src\exe-template\exe-template.vcxproj" Targets="Clean" Properties="Configuration=Release;Platform=Win32" />
+        <MSBuild Projects="..\src\exe-template\exe-template.vcxproj" Targets="Clean" Properties="Configuration=Debug;Platform=Win32" />
+
+        <!-- Build exe-templates targets -->
+        <Message Importance="high" Text="Building exe-template x64..." />
+        <MSBuild Projects="..\src\exe-template\exe-template.vcxproj" Targets="Build" Properties="Configuration=Release;Platform=x64" />
+        <MSBuild Projects="..\src\exe-template\exe-template.vcxproj" Targets="Build" Properties="Configuration=Debug;Platform=x64" />
+
+        <Message Importance="high" Text="Building exe-template x86..." />
+        <MSBuild Projects="..\src\exe-template\exe-template.vcxproj" Targets="Build" Properties="Configuration=Release;Platform=Win32" />
+        <MSBuild Projects="..\src\exe-template\exe-template.vcxproj" Targets="Build" Properties="Configuration=Debug;Platform=Win32" />
+
+        <!-- Clean dll-template targets -->
+        <Message Importance="high" Text="Cleaning dll-template x64..." />
+        <MSBuild Projects="..\src\dll-template\dll-template.vcxproj" Targets="Clean" Properties="Configuration=Release;Platform=x64" />
+        <MSBuild Projects="..\src\dll-template\dll-template.vcxproj" Targets="Clean" Properties="Configuration=Debug;Platform=x64" />
+
+        <Message Importance="high" Text="Cleaning dll-template x86..." />
+        <MSBuild Projects="..\src\dll-template\dll-template.vcxproj" Targets="Clean" Properties="Configuration=Release;Platform=Win32" />
+        <MSBuild Projects="..\src\dll-template\dll-template.vcxproj" Targets="Clean" Properties="Configuration=Debug;Platform=Win32" />
+
+        <!-- Build dll-templates targets -->
+        <Message Importance="high" Text="Building dll-template x64..." />
+        <MSBuild Projects="..\src\dll-template\dll-template.vcxproj" Targets="Build" Properties="Configuration=Release;Platform=x64" />
+        <MSBuild Projects="..\src\dll-template\dll-template.vcxproj" Targets="Build" Properties="Configuration=Debug;Platform=x64" />
+
+        <Message Importance="high" Text="Building dll-template x86..." />
+        <MSBuild Projects="..\src\dll-template\dll-template.vcxproj" Targets="Build" Properties="Configuration=Release;Platform=Win32" />
+        <MSBuild Projects="..\src\dll-template\dll-template.vcxproj" Targets="Build" Properties="Configuration=Debug;Platform=Win32" />
+    </Target>
+
+</Project>
