@@ -1,4 +1,5 @@
 # win-templates
 
-Visual Studio solution, that contains templates of VS projects with minimal executables, like .exe, .dll and .sys<br/>
-User mode executables, .exe and .dll do not depend on traditional visual studio runtime, so the output binaries will have minimal size, while being capable of running on differen Windows OS versions<br/>
+Contains ready-to-use Visual Studio prject templates that can build minimalistic Windows10 executables which are not dependent on VC Runtime,<br/>
+but are dependent on Microsoft's ucrtbase.dll. There are three project templates: .exe, .dll and .sys. Driver building project also contains<br/>
+a post-build step of signing the .sys file with self-authorized test certificate, which allows to test the driver in Windows test mode.<br/>
