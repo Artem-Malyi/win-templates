@@ -1,7 +1,7 @@
 @echo off
 rem +--------------------------------------------------------------------------------------------------------------------+
-rem | This script creates a test certificate, adds it to the local store and signs the given driver with it.
-rem | Note, that MakeCert.exe and SignTool.exe utilities are taken from Microsoft Windows SDK.                                                                 |
+rem | This script creates a test certificate, adds it to the local store and signs the given driver with it.             |
+rem | Note, that MakeCert.exe and SignTool.exe utilities are taken from Microsoft Windows SDK.                           |
 rem +--------------------------------------------------------------------------------------------------------------------+
 
 if "%1" == "" (
