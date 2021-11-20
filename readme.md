@@ -8,6 +8,6 @@ Driver building project also contains a post-build step of signing the .sys file
 test certificate, which allows to test the driver in Windows test mode.  
 
 To disable signature verification for x64 drivers, run the command with administrative privileges:  
-bcdedit /set testsigning off  
+# bcdedit /set testsigning on  
 and restart Windows.  
 
