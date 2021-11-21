@@ -1,6 +1,6 @@
 # win-templates
 
-Contains ready-to-use Visual Studio prject templates that can build minimalistic Windows10 executables.  
+Contains ready-to-use Visual Studio project templates that can build minimalistic Windows10 executables.  
 There are three of them: .exe, .dll and .sys and thery are not dependent on VC Runtime. Conversely, they  
 dependent on Microsoft's ucrtbase.dll.  
   
