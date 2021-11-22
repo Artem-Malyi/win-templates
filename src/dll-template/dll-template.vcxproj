@@ -116,7 +116,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libvcruntimed.lib;ucrtd.lib;msvcrtd.lib;shlwapi.lib;imagehlp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <EntryPointSymbol>DllMain</EntryPointSymbol>
+      <EntryPointSymbol>EntryPoint</EntryPointSymbol>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
@@ -142,7 +142,7 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libvcruntime.lib;ucrt.lib;msvcrt.lib;shlwapi.lib;imagehlp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <EntryPointSymbol>DllMain</EntryPointSymbol>
+      <EntryPointSymbol>EntryPoint</EntryPointSymbol>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
@@ -170,7 +170,7 @@
       <AdditionalLibraryDirectories>..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libvcruntimed.lib;ucrtd.lib;msvcrtd.lib;shlwapi.lib;imagehlp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
-      <EntryPointSymbol>DllMain</EntryPointSymbol>
+      <EntryPointSymbol>EntryPoint</EntryPointSymbol>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
@@ -196,7 +196,7 @@
       <AdditionalLibraryDirectories>..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libvcruntime.lib;ucrt.lib;msvcrt.lib;shlwapi.lib;imagehlp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <EntryPointSymbol>DllMain</EntryPointSymbol>
+      <EntryPointSymbol>EntryPoint</EntryPointSymbol>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
