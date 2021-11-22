@@ -19,10 +19,15 @@ BOOL WINAPI EntryPoint(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpReserved)
 {
     LOG("hInstance: 0x%0*x, dwReason: 0x%0*x, lpReserved: 0x%0*x", PTR_WIDTH, hinstDLL, PTR_WIDTH, fdwReason, PTR_WIDTH, lpReserved);
 
-    //
-    // Place your code here.
-    //
-    testDll();
+    __try {
+        //
+        // Place your code here.
+        //
+        testDll();
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER) {
+        LOG("SEH exception occurred");
+    }
 
     UINT uiStatus = ERROR_SUCCESS;
     LOG("Calling ExitProcess(%d)...", uiStatus);
