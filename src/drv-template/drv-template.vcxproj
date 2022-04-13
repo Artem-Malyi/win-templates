@@ -25,12 +25,17 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+    <DriverType>WDM</DriverType>
     <ConfigurationType>Driver</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
+    <SpectreMitigation>false</SpectreMitigation>
     <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+    <DriverType>WDM</DriverType>
     <ConfigurationType>Driver</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
@@ -38,17 +43,23 @@
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+	<DriverType>WDM</DriverType>
     <ConfigurationType>Driver</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
     <CharacterSet>NotSet</CharacterSet>
+    <Driver_SpectreMitigation>Spectre</Driver_SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+    <DriverType>WDM</DriverType>
     <ConfigurationType>Driver</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>NotSet</CharacterSet>
+    <Driver_SpectreMitigation>Spectre</Driver_SpectreMitigation>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -98,7 +109,7 @@
     <GenerateManifest>false</GenerateManifest>
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <TargetExt>.sys</TargetExt>
-    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
     <IncludePath>$(CRT_IncludePath);$(KM_IncludePath);$(KIT_SHARED_IncludePath)</IncludePath>
     <LibraryPath>$(DDK_LibraryPath_DDKPlatform);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -112,6 +123,7 @@
     <IgnoreImportLibrary>true</IgnoreImportLibrary>
     <IncludePath>$(CRT_IncludePath);$(KM_IncludePath);$(KIT_SHARED_IncludePath)</IncludePath>
     <LibraryPath>$(DDK_LibraryPath_DDKPlatform);$(LibraryPath)</LibraryPath>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -148,6 +160,9 @@
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
+    <DriverSign>
+      <FileDigestAlgorithm>SHA256</FileDigestAlgorithm>
+    </DriverSign>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -190,6 +205,9 @@
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
+    <DriverSign>
+      <FileDigestAlgorithm>SHA256</FileDigestAlgorithm>
+    </DriverSign>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -214,6 +232,7 @@
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <CallingConvention>StdCall</CallingConvention>
       <CompileAs>CompileAsC</CompileAs>
+      <ControlFlowGuard>false</ControlFlowGuard>
     </ClCompile>
     <Link>
       <SubSystem>Native</SubSystem>
@@ -237,6 +256,9 @@
       <Command>cd ..\..\make\sign-driver
 .\sign ..\..\out\$(TargetName)$(TargetExt)</Command>
     </PostBuildEvent>
+    <DriverSign>
+      <FileDigestAlgorithm>SHA256</FileDigestAlgorithm>
+    </DriverSign>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -259,6 +281,7 @@
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <CallingConvention>StdCall</CallingConvention>
       <CompileAs>CompileAsC</CompileAs>
+      <ControlFlowGuard>false</ControlFlowGuard>
     </ClCompile>
     <Link>
       <SubSystem>Native</SubSystem>
@@ -284,6 +307,9 @@
       <Command>cd ..\..\make\sign-driver
 .\sign ..\..\out\$(TargetName)$(TargetExt)</Command>
     </PostBuildEvent>
+    <DriverSign>
+      <FileDigestAlgorithm>SHA256</FileDigestAlgorithm>
+    </DriverSign>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="drv-template.c" />

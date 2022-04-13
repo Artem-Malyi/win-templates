@@ -36,6 +36,24 @@
         <Message Importance="high" Text="Building dll-template x86..." />
         <MSBuild Projects="..\src\dll-template\dll-template.vcxproj" Targets="Build" Properties="Configuration=Release;Platform=Win32" />
         <MSBuild Projects="..\src\dll-template\dll-template.vcxproj" Targets="Build" Properties="Configuration=Debug;Platform=Win32" />
+
+        <!-- Clean drv-template targets -->
+        <Message Importance="high" Text="Cleaning drv-template x64..." />
+        <MSBuild Projects="..\src\drv-template\drv-template.vcxproj" Targets="Clean" Properties="Configuration=Release;Platform=x64" />
+        <MSBuild Projects="..\src\drv-template\drv-template.vcxproj" Targets="Clean" Properties="Configuration=Debug;Platform=x64" />
+
+        <Message Importance="high" Text="Cleaning drv-template x86..." />
+        <MSBuild Projects="..\src\drv-template\drv-template.vcxproj" Targets="Clean" Properties="Configuration=Release;Platform=Win32" />
+        <MSBuild Projects="..\src\drv-template\drv-template.vcxproj" Targets="Clean" Properties="Configuration=Debug;Platform=Win32" />
+
+        <!-- Build drv-templates targets -->
+        <Message Importance="high" Text="Building drv-template x64..." />
+        <MSBuild Projects="..\src\drv-template\drv-template.vcxproj" Targets="Build" Properties="Configuration=Release;Platform=x64" />
+        <MSBuild Projects="..\src\drv-template\drv-template.vcxproj" Targets="Build" Properties="Configuration=Debug;Platform=x64" />
+
+        <Message Importance="high" Text="Building drv-template x86..." />
+        <MSBuild Projects="..\src\drv-template\drv-template.vcxproj" Targets="Build" Properties="Configuration=Release;Platform=Win32" />
+        <MSBuild Projects="..\src\drv-template\drv-template.vcxproj" Targets="Build" Properties="Configuration=Debug;Platform=Win32" />
     </Target>
 
 </Project>
